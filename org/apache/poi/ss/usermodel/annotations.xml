@@ -1,0 +1,5 @@
+<root>
+    <item name='org.apache.poi.ss.usermodel.Cell void setCellType(int)'>
+        <annotation name='java.lang.Deprecated'/>
+    </item>
+</root>
