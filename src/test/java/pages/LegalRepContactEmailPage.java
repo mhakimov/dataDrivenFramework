@@ -9,7 +9,7 @@ public class LegalRepContactEmailPage {
 
     public LegalRepContactEmailPage(WebDriver driver) {
         this.driver = driver;
-        element = new BasePage(driver);
+        element = new BasePage();
     }
 
     public void navigateToNextPage(String ifHasLegalRep) {

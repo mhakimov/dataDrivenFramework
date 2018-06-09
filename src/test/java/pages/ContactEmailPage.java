@@ -7,9 +7,9 @@ public class ContactEmailPage {
     WebDriver driver;
     BasePage element;
 
-    public ContactEmailPage(WebDriver driver) {
+    public ContactEmailPage() {
         this.driver = driver;
-        element = new BasePage(driver);
+        element = new BasePage();
     }
 
     public void fillInEmailDetails() {

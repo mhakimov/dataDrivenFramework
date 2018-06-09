@@ -11,6 +11,6 @@ public class StartPage {
     }
 
     public void navigateToStartPage() {
-        new BasePage(driver).clickButtonByCSS("a[data-track='apply-now']");
+        new BasePage().clickButtonByCSS("a[data-track='apply-now']");
     }
 }

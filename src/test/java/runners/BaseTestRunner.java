@@ -1,16 +1,19 @@
 package runners;
 
+import config.ConfigDataLoader;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import util.ExecutionContext;
 
 public abstract class BaseTestRunner {
   //  public WebDriver driver;
   //  static String webBrowser;
 
     @BeforeClass
-    public static void testSetup()  {
+    public  static void baseTestSetup()  {
         // Logger LOGGER = LoggerFactory.getLogger(DCJJourneyTest.class);
-//        ConfigDataLoader.loadData();
+        ExecutionContext.getInstance().setConfigData(ConfigDataLoader.loadData());
+        ConfigDataLoader.loadData();
 //        webBrowser = ConfigData.configDataProperties.getProperty("WebBrowser");
 
     }

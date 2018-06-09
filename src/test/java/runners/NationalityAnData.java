@@ -2,26 +2,24 @@ package runners;
 
 import org.junit.runners.Parameterized;
 
-import java.util.Arrays;
-import java.util.Collection;
-
 public class NationalityAnData extends E2eTest {
 
-    public NationalityAnData (String para) {
-        super(para);
+    public NationalityAnData (String index, String testId) {
+        super(index, testId);
         visaType = "nationality-an";
         System.out.println("saw bul");
         //   super.key = "TestId";
       //  super.value = para;
     }
 
-    @Parameterized.Parameters(name = "{index}: {0}")
-    public static Collection<String> getData() {
+    @Parameterized.Parameters(name = "{index} is {1}")
+    public static String[][] getData() {
 
 
-        return Arrays.asList(new String[] {
-                "Test1", "Test2"
-        });
+        return TestIds.nationality;
+//        return Arrays.asList(new String[] {
+//                "Test1", "Test2"
+//        });
     }
 
 //    @Parameterized.Parameters()
