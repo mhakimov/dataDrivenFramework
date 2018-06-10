@@ -23,11 +23,9 @@ import java.util.Map;
 
 public class BaseTest {
     protected WebDriver driver;
-   // static String webBrowser = ConfigData.configDataProperties.getProperty("WebBrowser");
     protected TestData testData;
-    public static String visaType;
     ExecutionContext executionContext;
-    Map<String, String> neededRowMap;
+    protected Map<String, String> neededRowMap;
     String key = "TestId";
     String testIdValue;
 
@@ -75,9 +73,7 @@ public class BaseTest {
                 driver = new ChromeDriver();
                 break;
         }
-
         driver.get(ConfigData.configDataProperties.getProperty("Host") + testData.productName);
-
     }
 
     protected BaseTest() {
@@ -86,16 +82,14 @@ public class BaseTest {
 
     protected BaseTest(String testIdKey, String testIdValue) {
 
-      //  ConfigDataLoader.loadData();
         this.testIdValue = testIdValue;
         executionContext = ExecutionContext.getInstance();
-        ConfigData configData = executionContext.getConfigData();
-        String testDataSource = configData.getStringProperty("Data", getClass().getSimpleName(), "Specific");
 
-     //   String testDataSource = ConfigData.configDataProperties.getProperty("DataPath") + "DCJ" + testData.productName;
+        String dataPath = ConfigData.configDataProperties.getProperty("DataPath");
+        String testDataSource = dataPath + ConfigData.configDataProperties.getProperty("Data." + getClass().getSimpleName() + ".Specific");
+
 
         executionContext.setTestData(testData);
-   //     String testDataSource = ConfigData.configDataProperties.getProperty("DataPath") + "DCJ" + testData.productName;
 
         File excelFile = new File(testDataSource + ".xlsx");
         String fullPath = excelFile.getAbsolutePath();
@@ -128,23 +122,11 @@ public class BaseTest {
         }
         ExecutionContext.getInstance().setDriver();
         driver = ExecutionContext.getInstance().getDriver();
-       // webBrowser = ConfigData.configDataProperties.getProperty("WebBrowser");
-
-//        switch (webBrowser){
-//            case "Firefox":
-//                //  System.setProperty(GECKO_DRIVER_EXE_PROPERTY, "C:\\Users\\mhakimov\\Downloads\\geckodriver.exe");
-//                driver = new FirefoxDriver();
-//                break;
-//            default:
-//                driver = new ChromeDriver();
-//                break;
-//        }
-
-       // driver.get(ConfigData.configDataProperties.getProperty("Host") + testData.productName);
 
         testData = new TestData();
-        testData.productName = visaType;
     }
+
+
 
     @After
     public void closeBrowser() {

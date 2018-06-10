@@ -1,6 +1,5 @@
 package pages;
 
-import data.TestData;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,29 +8,10 @@ import util.ExecutionContext;
 public class BasePage {
 
     protected WebDriver driver;
-    static String webBrowser;
-    TestData testData;
-   // public WebElements (WebDriver driver) {
-//        this.driver = driver;
-//    }
 
 
      public BasePage() {
          driver = ExecutionContext.getInstance().getDriver();
-//         webBrowser = ConfigData.configDataProperties.getProperty("WebBrowser");
-//
-//         switch (webBrowser){
-//             case "Firefox":
-//                 //  System.setProperty(GECKO_DRIVER_EXE_PROPERTY, "C:\\Users\\mhakimov\\Downloads\\geckodriver.exe");
-//                 driver = new FirefoxDriver();
-//                 break;
-//             default:
-//                 driver = new ChromeDriver();
-//                 break;
-//         }
-
-    //     driver.get(ConfigData.configDataProperties.getProperty("Host") + testData.productName);
-
     }
 
     public void clickButtonByCSS(String fieldCss) {

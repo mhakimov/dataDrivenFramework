@@ -18,4 +18,9 @@ public class ConfigData {
             e.printStackTrace();
         }
     }
+
+//    public final String getProperty(String key, String... subkeys) {
+//        return configData
+//                .getProperty(StringUtils.concatWith(KEYWORD_HIERARCHY_SEPARATOR, key, subkeys));
+//    }
 }

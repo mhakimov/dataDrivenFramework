@@ -4,7 +4,6 @@ import org.openqa.selenium.support.PageFactory;
 
 public class HomePage extends BasePage {
 
-   // WebDriver driver;
 
     public HomePage() {
         this.driver = driver;
